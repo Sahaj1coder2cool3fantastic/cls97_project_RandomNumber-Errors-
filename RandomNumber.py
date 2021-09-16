@@ -2,15 +2,12 @@ import random
 number=random.randint(1,9)
 chances = 0
 while chances < 5:
-    number=random.randint(1,9)
-    guessNo = input("Enter a number:")
-    if guessNo == number:
+    guess = int(input("Enter a number:")) 
+    if guess == number:
         print("Congratulations You Won!")
-        chances = chances + 1
         break
-    if guessNo != number:
-        chances = chances + 1
-        print("You Lose! The number is:", number)
-        chances = chances + 1
-    if  chances > 5:
-        print("Maximum chances reached!")
+    elif guess< number:
+        print("Your guess was too low:Guess a higher number than",guess)
+    else:
+        print("Your guess was too high:Guess a number lower than",guess)
+        chances += 1
